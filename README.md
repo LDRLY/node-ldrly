@@ -2,29 +2,30 @@
 Node-LDRLY
 ========
 
-Welcome to the Node-LDRLY repository. This package allows you to easily integrate [LDRLY](http://www.ldrly.com) into your social/mobile game. LDRLY provides intelligent social comparison, leaderboards, and stat analysis for your games.
-
-Mention something about how the package works here.... batching, etc!
+Welcome to the node-ldrly repository. This package allows you to easily integrate [LDRLY](http://www.ldrly.com) into your social/mobile game. LDRLY provides intelligent social comparison, leaderboards, accomplishments, dynamically generated goals and stat analysis for your games.
 
 Please note that this is a new product. To report any issues you encounter, you can submit them [here](https://github.com/LDRLY/node-ldrly/issues) or email us at [bugs@ldrly.com](mailto:bugs@ldrly.com).
 
 ## Getting Started
 
-1. Install Node.js. 
-2. Install this package by entering the following `npm install ldrly` into your application.
-3. Copy this code to initialize LDRLY `ldrly.init({api_key:'key'});`. You need to have your secret API for this to work.
+1. Install Node.js.
+2. Install this package:
+  * Manually by entering the following 'npm install ldrly' into your application.
+  * As a dependency by adding "ldrly" : ">=0.2.x" into your package.json file
+3. Copy this code to initialize LDRLY 'ldrly.init({key:'key', secret_key : 'secret'});'.
+  * **You need to have your API key and secret key for this to work.**
 
-## Method Reference 
+## Method Reference
 
 #### ldrly.postStat ({fbuid,stats}) ####
-Use **postStat** everytime you want to update LDRLY on a certain stat for a user. You can send as many stats for a user on a single call.
+Use **postStat** every time you want to update LDRLY on a certain stat for a user. You can send as many stats for a user on a single call.
 
 
 
 - `fbuid` - The user's Facebook ID
 - `third_party_fbuid` - The user's Third Party Facebook ID
 - `stats` - An object that contains all the stats with name value pairs to update.
- 
+
 <pre>
 ldrly.postStat({
   fbuid:'123456789',
@@ -43,7 +44,7 @@ ldrly.postStat({
 
 - `fbuid` - The user's Facebook ID
 - `third_party_fbuid` - The user's Third Party Facebook ID
-- `user_data` - An object that contains all the updated user meta-data 
+- `user_data` - An object that contains all the updated user meta-data
 
 <pre>
 ldrly.identify({
